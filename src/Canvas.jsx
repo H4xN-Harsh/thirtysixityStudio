@@ -2,7 +2,7 @@ import React, { useState,useEffect, useRef } from 'react'
 import canvasImages from './canvasimages';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import data from './data';
+
 
 
 
@@ -35,7 +35,10 @@ function Canvas({details}) {
         };
     },[index])
   return (
-    <canvas ref={canvasRef} className='absolute' style={{width:`${size*1.8}px`,height:`${size*1.8}px`,top:`${top}%`,left:`${left}%`,zIndex:`${zIndex}%`}} id='canvas'></canvas>
+    <canvas data-scroll data-scroll-speed = {Math.random().toFixed(1)}
+     ref={canvasRef}
+      className='absolute' 
+      style={{width:`${size*1.8}px`,height:`${size*1.8}px`,top:`${top}%`,left:`${left}%`,zIndex:`${zIndex}%`}} id='canvas'></canvas>
   )
 }
 
